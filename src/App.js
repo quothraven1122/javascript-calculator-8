@@ -28,7 +28,10 @@ class App {
           throw new Error("[ERROR] input error");
         }
       });
-      Console.print(numbers);
+
+      const sum = numbers.reduce((acc, n) => acc + Number(n), 0);
+      Console.print("결과 : " + sum);
+      return sum;
     } catch (e) {
       Console.print(e.message);
       return;
