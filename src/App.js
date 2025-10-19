@@ -24,7 +24,7 @@ class App {
 
       //numbers 안의 모든 element가 실제로 number인지 확인
       numbers.forEach((i) => {
-        if (isNaN(Number(i))) {
+        if (isNaN(Number(i)) || Number(i) < 0) {
           throw new Error("[ERROR] input error");
         }
       });
@@ -33,8 +33,7 @@ class App {
       Console.print("결과 : " + sum);
       return sum;
     } catch (e) {
-      Console.print(e.message);
-      return;
+      throw e;
     }
   }
 }
